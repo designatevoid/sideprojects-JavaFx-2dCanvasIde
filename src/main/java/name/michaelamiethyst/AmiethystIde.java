@@ -8,6 +8,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcType;
 import javafx.stage.Stage;
+import name.michaelamiethyst.shapes.Bubble;
 
 /**
  * Stub 2d Canvas API calls from Oracle Docs.
@@ -52,8 +53,9 @@ public class AmiethystIde extends Application {
         gc.strokeOval(60, 60, 30, 30);
 
         // draw rectangles with rounded corners -- very snazzy
+        new Bubble().atUpperLeftPoint(new Point(110, 60)).asSquare(30);
         gc.fillRoundRect(110, 60, 30, 30, 10, 10);
-        gc.strokeRoundRect(160, 60, 30, 30, 10, 10);
+        //gc.strokeRoundRect(160, 60, 30, 30, 10, 10);
 
         // draw two rows of pac-mans
         gc.fillArc(10, 110, 30, 30, 45, 240, ArcType.OPEN);
