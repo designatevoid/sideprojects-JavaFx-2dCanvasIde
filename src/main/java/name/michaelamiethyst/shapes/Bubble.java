@@ -1,9 +1,31 @@
 package name.michaelamiethyst.shapes;
 
+import javafx.scene.canvas.GraphicsContext;
+
 public class Bubble {
+    GraphicsContext gc;
+    private Point upperLeftCorner;
 
-    // upperLeftX
-    // upperLeftY
+    private int width;
+    private int height;
 
-    // .atX(110).atY(60).withWidth(30).asSquare();
+    public Bubble(GraphicsContext paintToThis) {
+        gc = paintToThis;
+    }
+
+    public Bubble atUpperLeftCorner(Point point) {
+        upperLeftCorner = point;
+        return this;
+    }
+
+    public Bubble asSquare(int widthAndHeight) {
+        width = widthAndHeight;
+        height = widthAndHeight;
+        return this;
+    }
+
+    public Bubble paint() {
+        gc.fillRoundRect(upperLeftCorner.x, upperLeftCorner.y, width, height, 10, 10);
+        return this;
+    }
 }
